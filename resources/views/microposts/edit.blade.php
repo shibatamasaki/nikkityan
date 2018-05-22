@@ -66,7 +66,6 @@
                 <div class="form-group">
                 {!! Form::date('date', null, ['class' => 'form-control']) !!}
                 </div>
-                
                 <div class="form-group">
                     {!! Form::label('content', '# 日記内容') !!}
                 </div>

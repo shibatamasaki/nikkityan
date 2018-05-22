@@ -14,7 +14,7 @@
             {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">
                     {!! Form::label('name', '日記名') !!}
-                    {!! Form::text('name', old('name'), ['class' => 'form-control' , 'placeholder'=>'〇〇日記']) !!}
+                    {!! Form::text('name', old('name'), ['class' => 'form-control' , 'placeholder'=>'〇〇日記（あとで変更できます）']) !!}
                 </div>
 
                 <div class="form-group">
