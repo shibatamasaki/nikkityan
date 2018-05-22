@@ -20,6 +20,14 @@
             @yield('content')
         </div>
 
+
+<script>
+    function submitChk () {
+        var flag = confirm ( "本当に削除してよろしいですか？");
+        return flag;
+    }
+</script>
+
 <header>
     <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
@@ -75,6 +83,12 @@
             <div class="form-group">
             {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}
                 {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
+            </div>
+            
+            <div class="form-group">
+            {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete','onsubmit' => 'return submitChk()']) !!}
+                {!! Form::submit('テスト', ['class' => 'btn btn-danger','onsubmit' => 'return submitChk()']) !!}
             {!! Form::close() !!}
             </div>
             
