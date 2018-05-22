@@ -19,29 +19,18 @@
             
             <br>
             
-            
-            
         </aside>
         <div class="col-xs-8">
-            
-            <!--
-            <ul class="nav nav-tabs nav-justified">
-                <li role="presentation" class="{{ Request::is('users/' . $user->id) ? 'active' : '' }}"><a href="{{ route('users.show', ['id' => $user->id]) }}">TimeLine <span class="badge">{{ $count_microposts }}</span></a></li>
-                <li><a href="#">Followings</a></li>
-                <li><a href="#">Followers</a></li>
-            </ul>
-            -->
-            
-            
+
             @if (Auth::user()->id == $user->id)
-                  {!! Form::open(['route' => 'microposts.store']) !!}
-                      <div class="form-group" style = "height:220px;">
-                          <p># 日記投稿 <span class="badge">{{ $count_microposts }}</span></p>
-                          {!! Form::date('date', null, ['class' => 'form-control']) !!}
-                          {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '5']) !!}
-                          {!! Form::submit('投稿', ['class' => 'btn btn-primary btn-block']) !!}
-                      </div>
-                  {!! Form::close() !!}
+              {!! Form::open(['route' => 'microposts.store']) !!}
+                  <div class="form-group" style = "height:220px;">
+                      <p># 日記投稿 <span class="badge">{{ $count_microposts }}</span></p>
+                      {!! Form::date('date', null, ['class' => 'form-control']) !!}
+                      {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '5','placeholder'=>'日記を書いてみよう']) !!}
+                      {!! Form::submit('投稿', ['class' => 'btn btn-primary btn-block']) !!}
+                  </div>
+              {!! Form::close() !!}
             @endif
             <p># 過去日記</p>
             @if (count($microposts) > 0)
@@ -49,4 +38,5 @@
             @endif
         </div>
     </div>
+    
 @endsection

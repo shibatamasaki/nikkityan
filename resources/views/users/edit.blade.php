@@ -9,7 +9,7 @@
         {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'put']) !!}
             <div class="form-group">
                 {!! Form::label('name', '# 日記名') !!}
-                {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                {!! Form::text('name', null, ['class' => 'form-control','placeholder'=>'日記名を入力してください']) !!}
             </div>
                 {!! Form::submit('更新', ['class' => 'btn btn-primary btn-block']) !!}
                 {!! Form::close() !!}
