@@ -5,7 +5,7 @@
 <body style="background-color:#F1D18A;">
 
     <div class="row">
-        <aside class="col-xs-4">
+        <aside class="hidden-xs , col-sm-4 , col-md-4 , col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">{{ $user->name }}</h3>
@@ -20,12 +20,12 @@
             <br>
             
         </aside>
-        <div class="col-xs-8">
+        <div class="col-xs-12 , col-sm-8 , col-md-8 , col-lg-8">
 
             @if (Auth::user()->id == $user->id)
               {!! Form::open(['route' => 'microposts.store']) !!}
                   <div class="form-group" style = "height:220px;">
-                      <p># 日記投稿 <span class="badge">{{ $count_microposts }}</span></p>
+                      <p># {{ $user->name }} <span class="badge">{{ $count_microposts }}</span></p>
                       {!! Form::date('date', date('Y-m-d'), ['class' => 'form-control']) !!}
                       {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '5','placeholder'=>'日記を書いてみよう']) !!}
                       {!! Form::submit('投稿', ['class' => 'btn btn-primary btn-block']) !!}
