@@ -25,14 +25,14 @@
             @if (Auth::user()->id == $user->id)
               {!! Form::open(['route' => 'microposts.store']) !!}
                   <div class="form-group" style = "height:280px;">
-                      <p># {{ $user->name }} <span class="badge">{{ $count_microposts }}</span></p>
+                      <p># {{ $user->name }} </p>
                       {!! Form::date('date', date('Y-m-d'), ['class' => 'form-control']) !!}
-                      {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '8','placeholder'=>'日記を書いてみよう']) !!}
+                      {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'maxlength' => '180' ,'rows' => '8','placeholder'=>'日記を書いてみよう（180文字）']) !!}
                       {!! Form::submit('投稿', ['class' => 'btn btn-primary btn-block']) !!}
                   </div>
               {!! Form::close() !!}
             @endif
-            <p># 過去日記</p>
+            <p># 過去日記 <span class="badge">{{ $count_microposts }}</span></p>
             @if (count($microposts) > 0)
                 @include('microposts.microposts', ['microposts' => $microposts])
             @endif

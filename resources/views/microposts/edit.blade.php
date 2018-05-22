@@ -14,7 +14,7 @@
         
         
     </head>
-<body style="background-color:#F1D18A;">
+        <body style="background-color:#F1D18A;">
         <div class="container">
             @include('commons.error_messages')
             @yield('content')
@@ -56,7 +56,6 @@
     </nav>
 </header>
          
-    <div class="row">
         <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-6 col-lg-offset-3">
             
             {!! Form::model($micropost, ['route' => ['microposts.update', $micropost->id], 'method' => 'put']) !!}
@@ -72,7 +71,7 @@
                     {!! Form::label('content', '# 日記内容') !!}
                 </div>
                 <div class="form-group">
-                {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
+                {!! Form::textarea('content', null, ['class' => 'form-control' ,'maxlength' => '180']) !!}
                 </div>
                 <div class="form-group">
                 {!! Form::submit('更新', ['class' => 'btn btn-primary']) !!}
@@ -87,6 +86,6 @@
             </div>
             
         </div>
-    </div>
+    
 
 </body>

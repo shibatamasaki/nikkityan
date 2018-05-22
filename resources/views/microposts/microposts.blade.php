@@ -3,7 +3,7 @@
     <?php $user = $micropost->user; ?>
     <li class="media">
         <div class="media-body">
-            <div class="center jumbotron" style = "background-color:white;padding:10px 20px;margin-bottom:0px;">
+            <div class="center jumbotron" style = "padding:10px 20px;margin-bottom:0px;">
                 <p style="font-size:12px;color:gray;">{!! nl2br(e($micropost->date)) !!}</p>
                 <br>
                 <p style="font-size:14px;color:#333333;">{!! nl2br(e($micropost->content)) !!}</p>
